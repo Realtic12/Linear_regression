@@ -14,19 +14,18 @@ class Linear_Regression():
 
         repetir = True
         pregunta = 0
-        #ask the user what size of house want
-        print("Introduce el precio deseado a gastar entre 0 y 100000")
+        #ask the user what is the desire price
+        print("Enter the desire price to buy a house among 10.000 and 100.000 $")
         while (repetir ==True):
             precio = int(input())
-            if (0<precio<100000):
+            if (10000<precio<100000):
                 repetir = False
             else:
-                print("Introduce un valor correcto")
+                print("Enter a correct value")
 
         #give a result for a single input by the user
-        print(precio)
         pregunta = (precio/25000)*(self.w_act)+(self.b_act)
-        print("El valor de la casa con {} sq² vale {}$".format(pregunta*25000,precio))
+        print("With {}$ you can buy a house with {}sq²".format(precio,pregunta*25000))
 
         plt.title("Price in USD related to Square feet") 
         plt.xlabel("Price ($USD)")
